@@ -2,13 +2,14 @@
 <%@ page session="false" %>
 <html>
 <head>
-	<title>Home</title>
+	<title> ${title} </title>
 </head>
 <body>
 <h1>
 	Hello world!  
 </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<P>  The time on the server is ${serverTime}.</P>
+<a href="context" title="April SIO" id="home_image"> ir a context</a>
 </body>
 </html>
