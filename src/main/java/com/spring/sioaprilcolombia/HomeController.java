@@ -41,10 +41,18 @@ public class HomeController {
 	
 	@RequestMapping(value = "/context", method = RequestMethod.GET)
 	public String test(Model model) {
-	    String greetings = "Greetings, Spring MVC!";
-	    model.addAttribute("message", greetings);
+	    
+		model.addAttribute("title", "SIO APRIL- Pasarela de pago");
 	 
 	    return "context";
+	}
+	
+	@RequestMapping(value = "/confirmation", method = RequestMethod.GET)
+	public String pay_confirmation(Model model) {
+	    
+		model.addAttribute("title", "SIO APRIL- Pasarela de pago");
+	 
+	    return "confirmation";
 	}
 	
 }

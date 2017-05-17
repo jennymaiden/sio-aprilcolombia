@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<form class="form-inline" id="form_search_contact" align="center">
-	<div class="form-group">
+<form class="form-inline" id="form_search_contact">
+	<div align="center">
 		<label for="select_tipodoc">Tipo de documento</label> <select
 			class="form-control" id="select_tipodoc" name="select_tipodoc">
 			<option value="CC">CC</option>
@@ -14,7 +14,7 @@
 		</select> &nbsp;&nbsp;&nbsp;&nbsp; <label for="txt_nro_documento">N&uacute;mero
 			de documento</label> <input type="text" class="form-control"
 			id="txt_nro_documento" name="txt_nro_documento"
-			placeholder="Ingrese el N&uacute;mero de documento">
+			placeholder="Ingrese el N&uacute;mero de documento"><br>
 		&nbsp;&nbsp;&nbsp;
 		<button type="button" class="btn btn-primary" title="crear"
 			id="btn_buscar">
@@ -26,7 +26,7 @@
 </form>
 <hr>
 <div id="div_from_customer">
-	<form class="form-horizontal" id="form_customer" >
+	<form class="form-horizontal" id="form_customer" action="payment_customer" method="post">
 
 		<div id="inf_customer">
 			<div class="alert alert-warning" id="new_customer">
@@ -47,18 +47,18 @@
 				<label for="txt_inf_name" class="col-lg-2 control-label"><code>*</code>Nombre</label>
 				<div class="col-lg-4">
 					<input type="text" class="form-control" id="txt_inf_name"
-						name="txt_inf_name" required>
+						name="txt_inf_name" placeholder="Ingrese el nombre del beneficiario"required>
 				</div>
 				<label for="txt_inf_lastname" class="col-lg-2 control-label"><code>*</code>Apellidos</label>
 				<div class="col-lg-4">
 					<input type="text" class="form-control" id="txt_inf_lastname"
-						name="txt_inf_lastname" required>
+						name="txt_inf_lastname" placeholder="Ingrese el apellido del beneficiario"required>
 				</div>
 			</div>
 			<!-- ------------------- -->
 			<div class="form-group">
 				<label for="sel_inf_gender" class="col-lg-2 control-label"><code>*</code>Género</label>
-				<div class="col-lg-1">
+				<div class="col-lg-2">
 					<select class="form-control" id="sel_inf_gender"
 						name="sel_inf_gender" required>
 						<option value="">-</option>
@@ -66,11 +66,11 @@
 						<option value="F">F</option>
 					</select>
 				</div>
-				<div class="col-xs-3"></div>
+				<div class="col-xs-2"></div>
 				<label for="txt_inf_mail" class="col-lg-2 control-label"><code>*</code>E-Mail</label>
 				<div class="col-lg-4">
 					<input type="email" class="form-control" id="txt_inf_mail"
-						name="txt_inf_mail" required>
+						name="txt_inf_mail" placeholder="Ingrese el correo electronico"required>
 				</div>
 			</div>
 			<!-- ------------------ -->
@@ -78,8 +78,8 @@
 				<label for="txt_inf_birth_date" class="col-lg-2 control-label"><code>*</code>Fecha
 					de Nacimiento</label>
 				<div class="col-lg-4">
-					<input type="text" class="form-control" id="txt_inf_birthdate"
-						name="txt_inf_birthdate" required>
+					<input type="text" class="form-control datepicker" id="txt_inf_birthdate"
+						name="txt_inf_birthdate" placeholder="mm/dd/aa"required>
 				</div>
 				<label for="sel_inf_country_birth" class="col-lg-2 control-label"><code>*</code>País
 					de Nacimiento</label>
@@ -134,7 +134,7 @@
 				<label for="txt_inf_address" class="col-lg-2 control-label"><code>*</code>Dirección</label>
 				<div class="col-lg-4">
 					<input type="text" class="form-control" id="txt_inf_address"
-						name="txt_inf_address" required>
+						name="txt_inf_address" placeholder="Ingrese la direccion de residencia"required>
 				</div>
 			</div>
 			<!-- -------------- -->
@@ -143,12 +143,12 @@
 					class="col-lg-2 control-label">Teléfono fijo</label>
 				<div class="col-lg-4">
 					<input type="number" class="form-control" id="txt_inf_landline"
-						name="txt_inf_landline">
+						name="txt_inf_landline" placeholder="Ingrese el telefono fijo">
 				</div>
 				<label for="txt_inf_mobile_phone" class="col-lg-2 control-label"><code>*</code>Teléfono móvil</label>
 				<div class="col-lg-4">
 					<input type="number" class="form-control" id="txt_inf_mobile_phone"
-						name="txt_inf_mobile_phone" required>
+						name="txt_inf_mobile_phone" placeholder="Ingrese el telefono movil"required>
 				</div>
 			</div>
 			<!-- -------------- -->

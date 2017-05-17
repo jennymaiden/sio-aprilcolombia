@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+@media (max-width: 600px) {
+
+    .headboard{
+    	text-align: center;
+    }
+    .log_user{
+    	text-align: center;
+    	padding-top: 20px;
+    }
+
+}
+
+footer{
+	position: fixed;
+	bottom: 0;
+	height: 30px;
+	width: 100%;
+	background-color: lightblue;
+}
+.sio-container{
+	padding:0.01em 16px;
+}
