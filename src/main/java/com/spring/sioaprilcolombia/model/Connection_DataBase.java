@@ -12,12 +12,14 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 public class Connection_DataBase {
 
 	/**
-	 * Metodo de conexion para Mysql*/
-	public DriverManagerDataSource connectionMysql(){
+	 * Metodo de conexion para Mysql
+	 * @param String host, String dataBase
+	 * @return DriverManagerDataSource*/
+	public DriverManagerDataSource connectionMysql(String host, String dataBase){
 		
 		DriverManagerDataSource dataSourceMysql = new DriverManagerDataSource();
 		dataSourceMysql.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSourceMysql.setUrl("jdbc:mysql://157.101.91.109/april_sales_operation_system_laboratorio");
+		dataSourceMysql.setUrl("jdbc:mysql://"+host+"/"+dataBase+"");
 		dataSourceMysql.setUsername("yenny.velez");
 		dataSourceMysql.setPassword("YeVe78963$$");
 		

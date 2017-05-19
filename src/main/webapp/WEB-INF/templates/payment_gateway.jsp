@@ -3,9 +3,7 @@
 	pageEncoding="UTF-8"%>
 
 <script type="text/javascript">
-	$(document)
-			.ready(
-					function() {
+	$(document).ready(function() {
 						//validacion de responsive
 						if (screen.width < 1024) {
 
@@ -23,14 +21,21 @@
 						});
 
 						//Botton de modal para cliente
-						$('.modalCuatomer')
-								.click(
-										'.panel-body',
-										function() {
-											document.cookie = "modalCustomer="
-													+ $(this).data('type')
-													+ "; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-										});
+						$('.modalCuatomer').click('.panel-body',function() {
+								document.cookie = "modalCustomer="+ $(this).data('type')+ "; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+						});
+						$('#btn_search_contact').click('.panel-body', function(){
+							//alert('entro');
+							var cc = document.getElementById('txt_nro_documento').value;
+							if(cc == '123'){
+								$('#old_customer').css('display', 'block');
+								$('.div_new_customer').css('display', 'none');
+							}else{
+								$('.div_new_customer').css('display', 'block');
+								$('#old_customer').css('display', 'none');
+							}
+							
+						});
 					});
 </script>
 
@@ -161,7 +166,7 @@
 			<!-- ----- Contacto de emergencia ----- -->
 			<div class="form-group" id="emergency_contact">
 				<h2 align="center">Contacto de emergencia</h2>
-				<jsp:include page="customer.jsp" />
+				
 			</div>
 			<!-- ----- END -Contacto de emergencia ----- -->
 			<hr>

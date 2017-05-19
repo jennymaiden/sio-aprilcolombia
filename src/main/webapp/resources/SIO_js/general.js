@@ -1,6 +1,10 @@
 /**
  * 
  */
+$(document).ready(function() {
+	
+
+});
 $(function() {
 	$('.datepicker').datepicker('.panel-body',{
 		keyboardNavigation: false,
