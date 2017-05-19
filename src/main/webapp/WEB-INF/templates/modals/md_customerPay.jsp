@@ -15,7 +15,7 @@
 				<jsp:include page="../customer.jsp" />
 			</div>
 			<div class="modal-footer">
-				<button type="submit" class="btn btn-success" form="form_customer">
+				<button type="submit" class="btn btn-success" form="form_customer" id="btn_add_customer" disabled>
 					<i class="glyphicon glyphicon-plus"></i>Agregar
 				</button>
 

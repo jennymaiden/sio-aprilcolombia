@@ -3,7 +3,9 @@
 	pageEncoding="UTF-8"%>
 
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(document)
+			.ready(
+					function() {
 						//validacion de responsive
 						if (screen.width < 1024) {
 
@@ -21,20 +23,40 @@
 						});
 
 						//Botton de modal para cliente
-						$('.modalCuatomer').click('.panel-body',function() {
-								document.cookie = "modalCustomer="+ $(this).data('type')+ "; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
-						});
-						$('#btn_search_contact').click('.panel-body', function(){
-							//alert('entro');
-							var cc = document.getElementById('txt_nro_documento').value;
-							if(cc == '123'){
-								$('#old_customer').css('display', 'block');
-								$('.div_new_customer').css('display', 'none');
+						$('.modalCuatomer')
+								.click(
+										'.panel-body',
+										function() {
+											document.cookie = "modalCustomer="
+													+ $(this).data('type')
+													+ "; expires=Thu, 18 Dec 2013 12:00:00 UTC; path=/";
+										});
+						$('#btn_search_contact')
+								.click(
+										'.panel-body',
+										function() {
+											document.getElementById('btn_add_customer').disabled=false;
+											var cc = document.getElementById('txt_nro_documento').value;
+											if (cc == '123') {
+												$('#old_customer').css('display', 'block');
+												$('.div_new_customer').css('display', 'none');
+												document.getElementById('type_customer').value='123';
+											} else {
+												$('.div_new_customer').css(
+														'display', 'block');
+												$('#old_customer').css(
+														'display', 'none');
+												document.getElementById('type_customer').value='';
+											}
+
+										});
+						$('#btn_add_customer').click('.panel-body', function(){
+							var type =document.getElementById('type_customer').value;
+							if(type ==''){
+								alert('cliente nuevo');
 							}else{
-								$('.div_new_customer').css('display', 'block');
-								$('#old_customer').css('display', 'none');
+								alert('cliente antiguo');
 							}
-							
 						});
 					});
 </script>
@@ -130,10 +152,12 @@
 				<i class="glyphicon glyphicon-ok"></i> pagador
 			</button>
 			<div class="form-group" align="center">
-				<h2>Ingrese la informacion de él o los beneficiarios</h2>
+				<h4>
+					<b>Ingrese la informacion de él o los beneficiarios</b>
+				</h4>
 				<!-- Trigger the modal with a button -->
 				<button type="button"
-					class="btn btn-outline btn-primary modalCuatomer"
+					class="btn btn-outline btn-primary modalCuatomer btn-sm"
 					data-toggle="modal" data-target="#modalCustomer"
 					data-type="add_beneficiary">Agregar</button>
 			</div>
@@ -164,10 +188,44 @@
 			</div>
 			<!-- --- END TABLE CUSTOMER---- -->
 			<!-- ----- Contacto de emergencia ----- -->
-			<div class="form-group" id="emergency_contact">
-				<h2 align="center">Contacto de emergencia</h2>
-				
+			<div class="panel panel-default" id="emergency_contact">
+				<div class="panel-body">
+					<h4 align="center">
+						<b>Contácto de emergencia</b>
+					</h4>
+					<!-- ------------ -->
+					<div class="form-group" style="margin-top: 30px">
+						<label for="txt_contact_name" class="col-lg-2 control-label"><code>*</code>Nombre</label>
+						<div class="col-lg-4">
+							<input type="text" class="form-control" id="txt_contact_name"
+								name="txt_contact_name"
+								placeholder="Ingrese el nombre del contacto">
+						</div>
+						<label for="txt_contact_lastname" class="col-lg-2 control-label"><code>*</code>Apellidos</label>
+						<div class="col-lg-4">
+							<input type="text" class="form-control" id="txt_contact_lastname"
+								name="txt_contact_lastname"
+								placeholder="Ingrese el apellido del contacto" required>
+						</div>
+					</div>
+					<!-- --------------- -->
+					<div class="form-group" style="margin-top: 30px">
+						<label for="txt_contact_email" class="col-lg-2 control-label">Correo Electronico</label>
+						<div class="col-lg-4">
+							<input type="text" class="form-control" id="txt_contact_email"
+								name="txt_contact_email"
+								placeholder="Ingrese el correo electronico">
+						</div>
+						<label for="txt_contact_phonemobile" class="col-lg-2 control-label"><code>*</code>Teléfono Móvil</label>
+						<div class="col-lg-4">
+							<input type="number" class="form-control" id="txt_contact_phonemobile"
+								name="txt_contact_phonemobile"
+								placeholder="Ingrese el telefono" required>
+						</div>
+					</div>
+				</div>
 			</div>
+
 			<!-- ----- END -Contacto de emergencia ----- -->
 			<hr>
 			<!-- button validator -->

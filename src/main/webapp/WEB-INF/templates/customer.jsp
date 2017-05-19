@@ -16,7 +16,7 @@
 			id="txt_nro_documento" name="txt_nro_documento"
 			placeholder="Ingrese el N&uacute;mero de documento"><br>
 		&nbsp;&nbsp;&nbsp;
-		<button type="button" class="btn btn-primary" title="crear"
+		<button type="button" class="btn btn-primary btn-sm" title="crear"
 			id="btn_search_contact">
 			<span class="glyphicon glyphicon-zoom-in"></span>&nbsp;&nbsp;Buscar
 		</button>
@@ -25,6 +25,7 @@
 
 </form>
 <hr>
+
 <div id="div_from_customer">
 	<form class="form-horizontal" id="form_customer"
 		action="payment_customer" method="post">
@@ -38,19 +39,20 @@
 				</small>
 
 			</div>
+			<input type="hidden" name="type_customer" value="" id="type_customer">
 			<!-- --------- -->
-			<div id="old_customer" style="display: block">
+			<div id="old_customer" style="display: none">
 				<div class="alert alert-info">
 					<small>Gracias por su preferencia con nosotros. </small>
 
 				</div>
-				<div class="container" align="center">
+				<div align="center">
 					<p>Gracias por su preferencia  señor <strong>Pedro Prueba</strong></p>
 				</div>
 			</div>
 
 			<!-- -------------------- -->
-			<div class="div_new_customer" style="display: block">
+			<div class="div_new_customer" style="display: none">
 				<!-- ---------------------- -->
 				<div class="form-group">
 					<label for="txt_inf_name" class="col-lg-2 control-label"><code>*</code>Nombre</label>

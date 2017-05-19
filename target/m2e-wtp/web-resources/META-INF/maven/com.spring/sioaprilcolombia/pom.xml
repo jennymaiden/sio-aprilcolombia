@@ -209,6 +209,36 @@
 					<mainClass>org.test.int1.Main</mainClass>
 				</configuration>
 			</plugin>
+			<!-- Plugin JAXB -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>xjc</goal>
+						</goals>
+						<phase>generate-sources</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<clearOutputDir>false</clearOutputDir><!--indica si hay que limpiar el directorio indicado en cada ejecucion  -->
+					<outputDirectory>src/main/java</outputDirectory> <!-- indica el directorio de generacion. -->
+					<schemaDirectory>src/main/webapp/schemas</schemaDirectory><!-- indica el directorio donde se encuentran los esquemas -->
+					<includeSchema>**/*.xsd</includeSchema><!-- indico un patron de busqueda en este caso le digo que tome todo los XSD -->
+					<bindingDirectory>src/main/resources/bindings</bindingDirectory><!-- indico el directorio de generacion de archivos XSD. -->
+					<enableIntrospection>false</enableIntrospection><!-- indico la posibilidad de generación Boolean getters/setters. -->
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<warName>${context.path}</warName>
+				</configuration>
+			</plugin>
+			<!-- End plugin JAX -->
 		</plugins>
 	</build>
 </project>

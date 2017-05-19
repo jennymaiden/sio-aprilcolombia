@@ -83,7 +83,7 @@ public class payment_customer extends HttpServlet {
 		response.sendRedirect("/sioaprilcolombia/context");
 		
 	}
-	
+
 	/**
 	 * Metodo para mostrar los tr de la tabla cliente
 	 * @param JSONObject
