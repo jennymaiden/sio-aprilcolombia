@@ -23,10 +23,10 @@
 		<p>Datos del pagador</p><br>
 		<p>codigo de pago</p>
 	</div>
-	<div class="row">
+	<div class="row headboard">
 			<div class="col-md-4">
-				<img alt="SIO APRIL logo empresa"
-					src="https://www.flickr.com/gp/150691688@N03/LVkvWs">
+				<img alt="SIO APRIL logo empresa" class="img_responsive"
+					src="http://www.freejpg.com.ar/asset/900/2f/2f74/F100008604.jpg">
 			</div>
 			<div class="col-md-8">
 				<h2>Nombre de la agencia</h2>

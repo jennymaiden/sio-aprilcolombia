@@ -4,13 +4,22 @@
     .headboard{
     	text-align: center;
     }
+    
     .log_user{
     	text-align: center;
     	padding-top: 20px;
     }
+    
+    .img_responsive{
+    	width: 60%; !importan
+    }
 
 }
 
+.img_responsive{
+	width: 80%;
+	height: auto;
+}
 footer{
 	position: fixed;
 	bottom: 0;

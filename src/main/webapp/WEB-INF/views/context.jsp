@@ -18,6 +18,7 @@
 <title> ${title}</title>
 </head>
 <body>
+<!-- <h1>la cotizacion id es ${quotation}</h1> -->
 	<jsp:include page="../templates/payment_gateway.jsp" />
 	<footer>
 		<jsp:include page ="../templates/footer.jsp"/>

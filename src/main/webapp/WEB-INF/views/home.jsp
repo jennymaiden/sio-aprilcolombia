@@ -10,6 +10,6 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}.</P>
-<a href="context" title="April SIO" id="home_image"> ir a context</a>
+<a href="context?id_quotation=518" title="April SIO" id="home_image"> ir a context</a>
 </body>
 </html>

@@ -10,8 +10,8 @@
 			<div class="modal-body">
 				<h2>¿Quien sera el pagador?</h2>
 				<ol>
-					<li><input type="radio" name="md_pagador" class="paymaster">
-						fulano</li>
+					<li><input type="radio" name="md_pagador" class="paymaster" value="fulano">
+						</li>
 					<li><input type="radio" name="md_pagador" class="paymaster">
 						fulano 2</li>
 					<li><input type="radio" name="md_pagador" class="paymaster">
@@ -22,7 +22,7 @@
 				</ol>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-success">
+				<button type="button" class="btn btn-success" id="btn_paymaster">
 					<i class="glyphicon glyphicon-plus"></i>Sigiente
 				</button>
 

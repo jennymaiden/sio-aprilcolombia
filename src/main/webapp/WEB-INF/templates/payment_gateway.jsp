@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -34,11 +35,11 @@
 </script>
 
 <div class="container">
-	<div class="jumbotron" style="background-color: #f9f9f9;">
+	<div class="jumbotron headboard" style="background-color: #f9f9f9;">
 		<div class="row">
 			<div class="col-md-4">
-				<img alt="SIO APRIL logo empresa"
-					src="https://www.flickr.com/gp/150691688@N03/LVkvWs">
+				<img alt="SIO APRIL logo empresa" class="img_responsive"
+					src="http://www.freejpg.com.ar/asset/900/2f/2f74/F100008604.jpg">
 			</div>
 			<div class="col-md-8">
 				<h2>Nombre de la agencia</h2>
@@ -48,45 +49,66 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<strong>Informacion general</strong>
 		</div>
 		<div class="panel-body">
 			<form class="form-horizontal" id="form_general_info">
-
 				<div class="form-horizontal">
-					<div class="form-group">
-						<label for="lbl_quotation_plan_type" class="col-lg-2 ">Tipo
-							plan </label>
-						<div class="col-lg-4" id="lbl_inf_plan_type">Familiar</div>
-						<label for="lbl_quotation_quantity" class="col-lg-3">Numero
-							de personas</label>
-						<div class="col-lg-2" id="lbl_quotation_quantity">3</div>
-					</div>
-					<!-- --------------------- -->
-					<div class="form-group">
-						<label for="lbl_quotation_product" class="col-lg-2">Producto
-						</label>
-						<div class="col-lg-2" id="lbl_quotation_product">Silver
-							Economy</div>
-						<label for="lbl_quotation_price_u" class="col-lg-2 ">Valor
-							unitario </label>
-						<div class="col-lg-2" id="lbl_quotation_price_u">
-							(COP)144.200 (USD)50.00</div>
-						<label for="lbl_quotation_price_t" class="col-lg-2 ">Valor
-							Total </label>
-						<div class="col-lg-2" id="lbl_quotation_price_u">
-							(COP)432.600 (USD)150.00</div>
-					</div>
-					<!-- -------------------- -->
-					<div class="form-group">
-						<label for="lbl_quotation_dates" class="col-lg-2">Fechas </label>
-						<div class="col-lg-4" id="lbl_quotation_dates">25-05-2017
-							hasta 31-05-2017</div>
-						<label for="lbl_quotation_trm" class="col-lg-2">TRM </label>
-						<div class="col-lg-4" id="lbl_quotation_trm">(COP)2.300</div>
-					</div>
+					<c:forEach items="${quotations}" var="quotation">
+						<div class="form-group">
+							<label for="lbl_quotation_plan_type" class="col-lg-2 ">Tipo
+								plan </label>
+							<div class="col-lg-4" id="lbl_inf_plan_type">
+								<c:out value="${quotation.tipoemi}"></c:out>
+							</div>
+							<label for="lbl_quotation_quantity" class="col-lg-3">Numero
+								de personas</label>
+							<div class="col-lg-2" id="lbl_quotation_quantity">
+								<c:out value="${quotation.nropasajeros}"></c:out>
+							</div>
+						</div>
+						<!-- --------------------- -->
+						<div class="form-group">
+							<label for="lbl_quotation_product" class="col-lg-2">Producto
+							</label>
+							<div class="col-lg-2" id="lbl_quotation_product">
+								<c:out value="${quotation.nom_prod}"></c:out>
+							</div>
+							<label for="lbl_quotation_price_u" class="col-lg-2 ">Valor
+								unitario </label>
+							<div class="col-lg-2" id="lbl_quotation_price_u">
+								(COP)
+								<c:out value="${quotation.vlr_cop}"></c:out>
+								(USD)
+								<c:out value="${quotation.vlr_usd}"></c:out>
+							</div>
+							<label for="lbl_quotation_price_t" class="col-lg-2 ">Valor
+								Total </label>
+							<div class="col-lg-2" id="lbl_quotation_price_u">
+								(COP)
+								<c:out value="${quotation.vlr_total}"></c:out>
+								(USD)150.00
+							</div>
+						</div>
+						<!-- -------------------- -->
+						<div class="form-group">
+							<label for="lbl_quotation_dates" class="col-lg-2">Fechas
+							</label>
+							<div class="col-lg-4" id="lbl_quotation_dates">
+								<c:out value="${quotation.fechaini}"></c:out>
+								hasta
+								<c:out value="${quotation.fechafin}"></c:out>
+							</div>
+							<label for="lbl_quotation_trm" class="col-lg-2">TRM </label>
+							<div class="col-lg-4" id="lbl_quotation_trm">
+								(COP)
+								<c:out value="${quotation.tasac}"></c:out>
+							</div>
+						</div>
+					</c:forEach>
 				</div>
 			</form>
 
